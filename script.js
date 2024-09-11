@@ -25,7 +25,7 @@ function getRandomAnimation() {
 function getRandomFontFamily() {
     const fonts = [
         'Arial, sans-serif',
-        'Courier New, monospace',
+        'Courier New, monospace',//
         'Georgia, serif',
         'Verdana, sans-serif',
         'Times New Roman, serif',
