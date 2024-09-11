@@ -1,9 +1,12 @@
-const sentence = prompt("Enter a sentence:");
+//const sentence = prompt("Enter a sentence:");
+
+const sentence = "Kolczyki pytań lichwiarz wziął na zastaw";
+
 const outputElement = document.getElementById("output");
 const gridSize = Math.ceil(Math.sqrt(sentence.length)); // Define the size of the grid (square root of total letters)
 
 function getRandomFontSize() {
-    return Math.floor(Math.random() * (48 - 4 + 1)) + 4 + "px";
+    return Math.floor(Math.random() * (80 - 4 + 1)) + 44 + "px";
 }
 
 function getRandomFontWeight() {
