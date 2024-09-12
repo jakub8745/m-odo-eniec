@@ -1,12 +1,19 @@
 //const sentence = prompt("Enter a sentence:");
 function getRandomSentence() {
-    const sentence = ["Kolczyki", "pytań", "lichwiarz", "wziął", "na", "zastaw"];
+    //const sentence = ["Kolczyki", "pytań", "lichwiarz", "wziął", "na", "zastaw"];
+    const sentence = ["Bo ziemia","– jedna;", "wszędzie", "jedna ziemia"]
     const randomIndex = Math.floor(Math.random() * sentence.length);
     const randomWord = sentence[randomIndex];
     console.log(randomWord);
 
     const outputElement = document.getElementById("output");
     outputElement.innerHTML = ''; // Clean the output element before appending new letters
+
+    const gridSize = Math.ceil(Math.sqrt(randomWord.length));
+    outputElement.style.display = "grid";
+    outputElement.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`; // Square grid
+    outputElement.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`; // Square grid
+    outputElement.style.gap = `${getRandomSpacing()} ${getRandomSpacing()}`; // Random gaps between letters and lines
 
     randomWord.split('').forEach((letter, index) => {
         const letterElement = document.createElement('span');
@@ -31,11 +38,6 @@ function getRandomSentence() {
 
             letterElement.textContent = letter;
         }
-
-        const gridSize = Math.ceil(Math.sqrt(sentence.length));
-        outputElement.style.display = "grid";
-        outputElement.style.gridTemplateColumns = `repeat(${gridSize}, auto)`; // Square grid
-        outputElement.style.gap = `${getRandomSpacing()} ${getRandomSpacing()}`; // Random gaps between letters and lines
 
         outputElement.appendChild(letterElement);
     });
